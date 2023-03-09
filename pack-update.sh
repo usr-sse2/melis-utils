@@ -8,8 +8,13 @@ set -e
 	exit 1 
 }
 
+if [[ -d $1 ]]; then
+    echo "Argument should be the destination image, not the .dump directory"
+    exit 1
+fi
+
 UPDATE_FILE=$1
-rm "$UPDATE_FILE"
+rm -f "$UPDATE_FILE"
 
 echo "Packing $UPDATE_FILE.dump/data_udisk into MINFS image $UPDATE_FILE.dump/data_udisk.fex"
 ./bin/minfs make "$UPDATE_FILE.dump/data_udisk" "$UPDATE_FILE.dump/data_udisk.fex" "$UPDATE_FILE.dump/data_udisk/rootfs_ini.tmp"
@@ -18,4 +23,4 @@ echo "Updating checksum of $UPDATE_FILE.dump/data_udisk.fex in $UPDATE_FILE.dump
 ./bin/add_checksum "$UPDATE_FILE.dump/data_udisk.fex" "$UPDATE_FILE.dump/Vdata_udisk.fex"
 
 echo "Packing $UPDATE_FILE.dump into update image $UPDATE_FILE"
-./bin/awimage -v "$UPDATE_FILE.dump"
+./bin/awimage -v -n "$UPDATE_FILE.dump"
