@@ -11,6 +11,8 @@ SCRIPT_DIR="$(dirname -- "$0")"
 
 UPDATE_FILE=$1
 
+export ASAN_OPTIONS=detect_leaks=0
+
 echo "Unpacking update image $UPDATE_FILE into $UPDATE_FILE.dump"
 rm -Rf "$UPDATE_FILE.dump"
 "$SCRIPT_DIR"/bin/awimage -v "$UPDATE_FILE"

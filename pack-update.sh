@@ -18,6 +18,8 @@ fi
 UPDATE_FILE=$1
 rm -f "$UPDATE_FILE"
 
+export ASAN_OPTIONS=detect_leaks=0
+
 echo "Packing $UPDATE_FILE.dump/data_udisk into MINFS image $UPDATE_FILE.dump/data_udisk.fex"
 "$SCRIPT_DIR"/bin/minfs make "$UPDATE_FILE.dump/data_udisk" "$UPDATE_FILE.dump/data_udisk.fex" "$UPDATE_FILE.dump/data_udisk/rootfs_ini.tmp"
 
