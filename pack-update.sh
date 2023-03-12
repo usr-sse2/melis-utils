@@ -8,6 +8,8 @@ set -e
 	exit 1 
 }
 
+SCRIPT_DIR="$(dirname -- "$0")"
+
 if [[ -d $1 ]]; then
     echo "Argument should be the destination image, not the .dump directory"
     exit 1
@@ -17,10 +19,13 @@ UPDATE_FILE=$1
 rm -f "$UPDATE_FILE"
 
 echo "Packing $UPDATE_FILE.dump/data_udisk into MINFS image $UPDATE_FILE.dump/data_udisk.fex"
-./bin/minfs make "$UPDATE_FILE.dump/data_udisk" "$UPDATE_FILE.dump/data_udisk.fex" "$UPDATE_FILE.dump/data_udisk/rootfs_ini.tmp"
+"$SCRIPT_DIR"/bin/minfs make "$UPDATE_FILE.dump/data_udisk" "$UPDATE_FILE.dump/data_udisk.fex" "$UPDATE_FILE.dump/data_udisk/rootfs_ini.tmp"
 
 echo "Updating checksum of $UPDATE_FILE.dump/data_udisk.fex in $UPDATE_FILE.dump/Vdata_udisk.fex"
-./bin/add_checksum "$UPDATE_FILE.dump/data_udisk.fex" "$UPDATE_FILE.dump/Vdata_udisk.fex"
+"$SCRIPT_DIR"/bin/add_checksum "$UPDATE_FILE.dump/data_udisk.fex" "$UPDATE_FILE.dump/Vdata_udisk.fex"
+
+echo "Updating checksum of $UPDATE_FILE.dump/melis_pkg_nor.fex in $UPDATE_FILE.dump/Vmelis_pkg_nor.fex"
+"$SCRIPT_DIR"/bin/add_checksum "$UPDATE_FILE.dump/melis_pkg_nor.fex" "$UPDATE_FILE.dump/Vmelis_pkg_nor.fex"
 
 echo "Packing $UPDATE_FILE.dump into update image $UPDATE_FILE"
-./bin/awimage -v -n "$UPDATE_FILE.dump"
+"$SCRIPT_DIR"/bin/awimage -v -n "$UPDATE_FILE.dump"

@@ -7,6 +7,7 @@ set -e
 	echo "        It unpacks update_file.img into update_file.img.dump, removing the destination directory if it already exists."
 	exit 1 
 }
+cd -- "$(dirname -- "$0")"
 
 UPDATE_FILE=$1
 
