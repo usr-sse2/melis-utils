@@ -1,0 +1,1680 @@
+# melis-utils
+
+Usage example:
+```
+ ~/carplay/melis-utils/melis-utils-macOS/lol   master ●  ~/carplay/melis-utils/melis-utils-macOS/unpack-update.sh LTTF133.img 
+Unpacking update image LTTF133.img into LTTF133.img.dump
+awimage(7040,0x7ff8529dc680) malloc: nano zone abandoned due to inability to preallocate reserved vm space.
+/Users/usrsse2/carplay/melis-utils/melis-utils-macOS/bin/awimage: unpacking LTTF133.img to LTTF133.img.dump
+Extracting: COMMON   SYS_CONFIG100000 (71759, 72704)
+Extracting: COMMON   SYS_CONFIG_BIN00 (50176, 50176)
+Extracting: COMMON   SPLIT_0000000000 (512, 512)
+Extracting: COMMON   SYS_CONFIG000000 (3201, 4096)
+Extracting: COMMON   DTB_CONFIG000000 (76800, 76800)
+Extracting: 12345678 1234567890BNOR_0 (49152, 49152)
+Extracting: 12345678 1234567890BOOT_0 (57344, 57344)
+Extracting: 12345678 BOOTPKG-00000000 (311296, 311296)
+Extracting: 12345678 BOOTPKG-NOR00000 (393216, 393216)
+Extracting: 12345678 UBOOT_0000000000 (379904, 379904)
+Extracting: FES      FES_1-0000000000 (29600, 29696)
+Extracting: PXTOOLSB XXXXXXXXXXXXXXXX (154112, 154112)
+Extracting: PXTOOLCH XXXXXXXXXXXXXXXX (125952, 125952)
+Extracting: UPFLYTLS XXXXXXXXXXXXXXXX (165006, 165008)
+Extracting: UPFLTL32 XXXXXXXXXXXXXXXX (150834, 150848)
+Extracting: 12345678 1234567890CARDTL (73216, 73216)
+Extracting: 12345678 1234567890SCRIPT (1894, 1904)
+Extracting: 12345678 1234567890___GPT (8192, 8192)
+Extracting: 12345678 1234567890___MBR (16384, 16384)
+Extracting: 12345678 1234567890DLINFO (16384, 16384)
+Extracting: 12345678 1234567890ARISC (15, 16)
+Extracting: RFSFAT16 MELIS_PKG_NOR_FE (753664, 753664)
+Extracting: RFSFAT16 VMELIS_PKG_NOR_F (4, 16)
+Extracting: RFSFAT16 DATA_UDISK_FEX00 (6750208, 6750208)
+Extracting: RFSFAT16 VDATA_UDISK_FEX0 (4, 1024)
+Extracting: RFSFAT16 WINDOWS_FEX00000 (400, 512)
+Unpacking MINFS image LTTF133.img.dump/data_udisk.fex into LTTF133.img.dump/data_udisk
+minfs(7057,0x7ff8529dc680) malloc: nano zone abandoned due to inability to preallocate reserved vm space.
+Unpacking /apps
+Unpacking /apps/AndroidAuto
+Unpacking /apps/CarPlay
+Unpacking /apps/Data
+Unpacking /apps/desktop
+Unpacking /apps/Font
+Unpacking /apps/Language
+Unpacking /apps/Logo
+Unpacking /apps/WallPaper
+Unpacking /apps/WallPaper/thumb
+Unpacking /etc
+Unpacking /mod
+Unpacking /mod/cedar
+Unpacking /mod/willow
+Unpacking /res
+------------------------------------------------------------------
+dump minfs image file [/Users/usrsse2/carplay/melis-utils/melis-utils-macOS/lol/LTTF133.img.dump/data_udisk.fex] succeeded
+Directory Number   : [      15]
+File number        : [     155]
+------------------------------------------------------------------
+
+```
+
+
+
+
+```
+ ~/carplay/melis-utils/melis-utils-macOS/lol   master ●  ~/carplay/melis-utils/melis-utils-macOS/pack-update.sh LTTF133.img 
+Packing LTTF133.img.dump/data_udisk into MINFS image LTTF133.img.dump/data_udisk.fex
+minfs(7148,0x7ff8529dc680) malloc: nano zone abandoned due to inability to preallocate reserved vm space.
+Section 1
+    offset 0
+    size 3112
+    recsize 456
+    recunpacksize 3112
+    compressed 2
+Section 2
+    offset 456
+    size 18792
+    recsize 10584
+    recunpacksize 18792
+    compressed 2
+Section 3
+    offset 11040
+    size 3960
+    recsize 1262
+    recunpacksize 3960
+    compressed 2
+Section 4
+    offset 12304
+    size 1884
+    recsize 64
+    recunpacksize 1884
+    compressed 2
+Section 6
+    offset 12368
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 887980
+    recsize 523695
+    recunpacksize 887980
+    compressed 2
+Section 2
+    offset 523696
+    size 317340
+    recsize 91152
+    recunpacksize 317340
+    compressed 2
+Section 3
+    offset 614848
+    size 238768
+    recsize 70479
+    recunpacksize 238768
+    compressed 2
+Section 5
+    offset 685328
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 520136
+    recsize 315457
+    recunpacksize 520136
+    compressed 2
+Section 2
+    offset 315460
+    size 329896
+    recsize 90485
+    recunpacksize 329896
+    compressed 2
+Section 3
+    offset 405948
+    size 68000
+    recsize 10222
+    recunpacksize 68000
+    compressed 2
+Section 5
+    offset 416172
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 646456
+    recsize 409322
+    recunpacksize 646456
+    compressed 2
+Section 2
+    offset 409324
+    size 225072
+    recsize 84243
+    recunpacksize 225072
+    compressed 2
+Section 3
+    offset 493568
+    size 5252
+    recsize 484
+    recunpacksize 5252
+    compressed 2
+Section 5
+    offset 494052
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 52752
+    recsize 31159
+    recunpacksize 52752
+    compressed 2
+Section 2
+    offset 31160
+    size 7016
+    recsize 2112
+    recunpacksize 7016
+    compressed 2
+Section 3
+    offset 33272
+    size 6128
+    recsize 636
+    recunpacksize 6128
+    compressed 2
+Section 5
+    offset 33908
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 32
+    recsize 32
+    recunpacksize 32
+    compressed 0
+Section 2
+    offset 32
+    size 1544
+    recsize 904
+    recunpacksize 1544
+    compressed 2
+Section 3
+    offset 936
+    size 222016
+    recsize 119801
+    recunpacksize 222016
+    compressed 2
+Section 4
+    offset 120740
+    size 0
+    recsize 0
+    recunpacksize 0
+    compressed 0
+Section 5
+    offset 120740
+    size 0
+    recsize 0
+    recunpacksize 0
+    compressed 0
+Section 6
+    offset 120740
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 10428
+    recsize 6442
+    recunpacksize 10428
+    compressed 2
+Section 2
+    offset 6444
+    size 4508
+    recsize 1628
+    recunpacksize 4508
+    compressed 2
+Section 3
+    offset 8072
+    size 1872
+    recsize 57
+    recunpacksize 1872
+    compressed 2
+Section 5
+    offset 8132
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 4136
+    recsize 2747
+    recunpacksize 4136
+    compressed 2
+Section 2
+    offset 2748
+    size 376
+    recsize 376
+    recunpacksize 376
+    compressed 0
+Section 3
+    offset 3124
+    size 0
+    recsize 0
+    recunpacksize 0
+    compressed 0
+Section 5
+    offset 3124
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 16756
+    recsize 10875
+    recunpacksize 16756
+    compressed 2
+Section 2
+    offset 10876
+    size 2924
+    recsize 969
+    recunpacksize 2924
+    compressed 2
+Section 3
+    offset 11848
+    size 16
+    recsize 16
+    recunpacksize 16
+    compressed 0
+Section 5
+    offset 11864
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 53648
+    recsize 32825
+    recunpacksize 53648
+    compressed 2
+Section 2
+    offset 32828
+    size 6432
+    recsize 2165
+    recunpacksize 6432
+    compressed 2
+Section 3
+    offset 34996
+    size 2300
+    recsize 100
+    recunpacksize 2300
+    compressed 2
+Section 5
+    offset 35096
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 216
+    recsize 216
+    recunpacksize 216
+    compressed 0
+Section 2
+    offset 216
+    size 8440
+    recsize 6778
+    recunpacksize 8440
+    compressed 2
+Section 3
+    offset 6996
+    size 568
+    recsize 568
+    recunpacksize 568
+    compressed 0
+Section 4
+    offset 7564
+    size 0
+    recsize 0
+    recunpacksize 0
+    compressed 0
+Section 5
+    offset 7564
+    size 0
+    recsize 0
+    recunpacksize 0
+    compressed 0
+Section 6
+    offset 7564
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 12336
+    recsize 8063
+    recunpacksize 12336
+    compressed 2
+Section 2
+    offset 8064
+    size 4384
+    recsize 1560
+    recunpacksize 4384
+    compressed 2
+Section 3
+    offset 9624
+    size 1872
+    recsize 57
+    recunpacksize 1872
+    compressed 2
+Section 5
+    offset 9684
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 5652
+    recsize 3893
+    recunpacksize 5652
+    compressed 2
+Section 2
+    offset 3896
+    size 392
+    recsize 392
+    recunpacksize 392
+    compressed 0
+Section 3
+    offset 4288
+    size 0
+    recsize 0
+    recunpacksize 0
+    compressed 0
+Section 5
+    offset 4288
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 52520
+    recsize 31602
+    recunpacksize 52520
+    compressed 2
+Section 2
+    offset 31604
+    size 6056
+    recsize 1961
+    recunpacksize 6056
+    compressed 2
+Section 3
+    offset 33568
+    size 2304
+    recsize 104
+    recunpacksize 2304
+    compressed 2
+Section 5
+    offset 33672
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 64504
+    recsize 45895
+    recunpacksize 64504
+    compressed 2
+Section 2
+    offset 45896
+    size 40952
+    recsize 28837
+    recunpacksize 40952
+    compressed 2
+Section 3
+    offset 74736
+    size 16
+    recsize 16
+    recunpacksize 16
+    compressed 0
+Section 4
+    offset 74752
+    size 392
+    recsize 392
+    recunpacksize 392
+    compressed 0
+Section 6
+    offset 75144
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 22960
+    recsize 15299
+    recunpacksize 22960
+    compressed 2
+Section 2
+    offset 15300
+    size 2840
+    recsize 1051
+    recunpacksize 2840
+    compressed 2
+Section 3
+    offset 16352
+    size 16
+    recsize 16
+    recunpacksize 16
+    compressed 0
+Section 4
+    offset 16368
+    size 48
+    recsize 48
+    recunpacksize 48
+    compressed 0
+Section 6
+    offset 16416
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 52576
+    recsize 35599
+    recunpacksize 52576
+    compressed 2
+Section 2
+    offset 35600
+    size 87496
+    recsize 40021
+    recunpacksize 87496
+    compressed 2
+Section 3
+    offset 75624
+    size 5720
+    recsize 1222
+    recunpacksize 5720
+    compressed 2
+Section 4
+    offset 76848
+    size 456
+    recsize 456
+    recunpacksize 456
+    compressed 0
+Section 6
+    offset 77304
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 47376
+    recsize 29154
+    recunpacksize 47376
+    compressed 2
+Section 2
+    offset 29156
+    size 6184
+    recsize 2448
+    recunpacksize 6184
+    compressed 2
+Section 3
+    offset 31604
+    size 16
+    recsize 16
+    recunpacksize 16
+    compressed 0
+Section 4
+    offset 31620
+    size 480
+    recsize 480
+    recunpacksize 480
+    compressed 0
+Section 6
+    offset 32100
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 26216
+    recsize 18182
+    recunpacksize 26216
+    compressed 2
+Section 2
+    offset 18184
+    size 7640
+    recsize 4452
+    recunpacksize 7640
+    compressed 2
+Section 3
+    offset 22636
+    size 128
+    recsize 128
+    recunpacksize 128
+    compressed 0
+Section 4
+    offset 22764
+    size 168
+    recsize 168
+    recunpacksize 168
+    compressed 0
+Section 6
+    offset 22932
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 26296
+    recsize 18415
+    recunpacksize 26296
+    compressed 2
+Section 2
+    offset 18416
+    size 31392
+    recsize 22028
+    recunpacksize 31392
+    compressed 2
+Section 3
+    offset 40444
+    size 16
+    recsize 16
+    recunpacksize 16
+    compressed 0
+Section 4
+    offset 40460
+    size 288
+    recsize 288
+    recunpacksize 288
+    compressed 0
+Section 6
+    offset 40748
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 11192
+    recsize 5722
+    recunpacksize 11192
+    compressed 2
+Section 2
+    offset 5724
+    size 3896
+    recsize 1082
+    recunpacksize 3896
+    compressed 2
+Section 3
+    offset 6808
+    size 0
+    recsize 0
+    recunpacksize 0
+    compressed 0
+Section 5
+    offset 6808
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 28888
+    recsize 18870
+    recunpacksize 28888
+    compressed 2
+Section 2
+    offset 18872
+    size 3960
+    recsize 1473
+    recunpacksize 3960
+    compressed 2
+Section 3
+    offset 20348
+    size 1040
+    recsize 341
+    recunpacksize 1040
+    compressed 2
+Section 4
+    offset 20692
+    size 288
+    recsize 288
+    recunpacksize 288
+    compressed 0
+Section 6
+    offset 20980
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 45328
+    recsize 32157
+    recunpacksize 45328
+    compressed 2
+Section 2
+    offset 32160
+    size 19848
+    recsize 8167
+    recunpacksize 19848
+    compressed 2
+Section 3
+    offset 40328
+    size 344
+    recsize 344
+    recunpacksize 344
+    compressed 0
+Section 4
+    offset 40672
+    size 224
+    recsize 224
+    recunpacksize 224
+    compressed 0
+Section 6
+    offset 40896
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 50056
+    recsize 33579
+    recunpacksize 50056
+    compressed 2
+Section 2
+    offset 33580
+    size 47496
+    recsize 37928
+    recunpacksize 47496
+    compressed 2
+Section 3
+    offset 71508
+    size 320
+    recsize 320
+    recunpacksize 320
+    compressed 0
+Section 4
+    offset 71828
+    size 96
+    recsize 96
+    recunpacksize 96
+    compressed 0
+Section 6
+    offset 71924
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 99728
+    recsize 32349
+    recunpacksize 99728
+    compressed 2
+Section 2
+    offset 32352
+    size 5792
+    recsize 2110
+    recunpacksize 5792
+    compressed 2
+Section 3
+    offset 34464
+    size 872
+    recsize 872
+    recunpacksize 872
+    compressed 0
+Section 4
+    offset 35336
+    size 176
+    recsize 176
+    recunpacksize 176
+    compressed 0
+Section 6
+    offset 35512
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 32504
+    recsize 21062
+    recunpacksize 32504
+    compressed 2
+Section 2
+    offset 21064
+    size 4352
+    recsize 2361
+    recunpacksize 4352
+    compressed 2
+Section 3
+    offset 23428
+    size 7600
+    recsize 5971
+    recunpacksize 7600
+    compressed 2
+Section 4
+    offset 29400
+    size 240
+    recsize 240
+    recunpacksize 240
+    compressed 0
+Section 6
+    offset 29640
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 132720
+    recsize 88742
+    recunpacksize 132720
+    compressed 2
+Section 2
+    offset 88744
+    size 68600
+    recsize 31962
+    recunpacksize 68600
+    compressed 2
+Section 3
+    offset 120708
+    size 2536
+    recsize 264
+    recunpacksize 2536
+    compressed 2
+Section 4
+    offset 120972
+    size 696
+    recsize 696
+    recunpacksize 696
+    compressed 0
+Section 6
+    offset 121668
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 3576
+    recsize 2229
+    recunpacksize 3576
+    compressed 2
+Section 2
+    offset 2232
+    size 336
+    recsize 336
+    recunpacksize 336
+    compressed 0
+Section 3
+    offset 2568
+    size 0
+    recsize 0
+    recunpacksize 0
+    compressed 0
+Section 5
+    offset 2568
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 41792
+    recsize 12116
+    recunpacksize 41792
+    compressed 2
+Section 2
+    offset 12116
+    size 7920
+    recsize 3061
+    recunpacksize 7920
+    compressed 2
+Section 3
+    offset 15180
+    size 23976
+    recsize 2535
+    recunpacksize 23976
+    compressed 2
+Section 5
+    offset 17716
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 7336
+    recsize 4290
+    recunpacksize 7336
+    compressed 2
+Section 2
+    offset 4292
+    size 240
+    recsize 240
+    recunpacksize 240
+    compressed 0
+Section 3
+    offset 4532
+    size 488
+    recsize 488
+    recunpacksize 488
+    compressed 0
+Section 5
+    offset 5020
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 8920
+    recsize 5587
+    recunpacksize 8920
+    compressed 2
+Section 2
+    offset 5588
+    size 2000
+    recsize 741
+    recunpacksize 2000
+    compressed 2
+Section 3
+    offset 6332
+    size 1872
+    recsize 58
+    recunpacksize 1872
+    compressed 2
+Section 5
+    offset 6392
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 2192
+    recsize 1567
+    recunpacksize 2192
+    compressed 2
+Section 2
+    offset 1568
+    size 176
+    recsize 176
+    recunpacksize 176
+    compressed 0
+Section 3
+    offset 1744
+    size 0
+    recsize 0
+    recunpacksize 0
+    compressed 0
+Section 5
+    offset 1744
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 44608
+    recsize 19445
+    recunpacksize 44608
+    compressed 2
+Section 2
+    offset 19448
+    size 2104
+    recsize 1236
+    recunpacksize 2104
+    compressed 2
+Section 3
+    offset 20684
+    size 38240
+    recsize 10266
+    recunpacksize 38240
+    compressed 2
+Section 5
+    offset 30952
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 4176
+    recsize 2646
+    recunpacksize 4176
+    compressed 2
+Section 2
+    offset 2648
+    size 328
+    recsize 328
+    recunpacksize 328
+    compressed 0
+Section 3
+    offset 2976
+    size 2040
+    recsize 135
+    recunpacksize 2040
+    compressed 2
+Section 4
+    offset 3112
+    size 32
+    recsize 32
+    recunpacksize 32
+    compressed 0
+Section 6
+    offset 3144
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 6880
+    recsize 4328
+    recunpacksize 6880
+    compressed 2
+Section 2
+    offset 4328
+    size 1448
+    recsize 537
+    recunpacksize 1448
+    compressed 2
+Section 3
+    offset 4868
+    size 0
+    recsize 0
+    recunpacksize 0
+    compressed 0
+Section 5
+    offset 4868
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 20416
+    recsize 13595
+    recunpacksize 20416
+    compressed 2
+Section 2
+    offset 13596
+    size 496
+    recsize 496
+    recunpacksize 496
+    compressed 0
+Section 3
+    offset 14092
+    size 0
+    recsize 0
+    recunpacksize 0
+    compressed 0
+Section 5
+    offset 14092
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 7344
+    recsize 5173
+    recunpacksize 7344
+    compressed 2
+Section 2
+    offset 5176
+    size 392
+    recsize 392
+    recunpacksize 392
+    compressed 0
+Section 3
+    offset 5568
+    size 40
+    recsize 40
+    recunpacksize 40
+    compressed 0
+Section 5
+    offset 5608
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 9808
+    recsize 6853
+    recunpacksize 9808
+    compressed 2
+Section 2
+    offset 6856
+    size 600
+    recsize 600
+    recunpacksize 600
+    compressed 0
+Section 3
+    offset 7456
+    size 904
+    recsize 904
+    recunpacksize 904
+    compressed 0
+Section 5
+    offset 8360
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 6960
+    recsize 4744
+    recunpacksize 6960
+    compressed 2
+Section 2
+    offset 4744
+    size 352
+    recsize 352
+    recunpacksize 352
+    compressed 0
+Section 3
+    offset 5096
+    size 40
+    recsize 40
+    recunpacksize 40
+    compressed 0
+Section 5
+    offset 5136
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 8472
+    recsize 5975
+    recunpacksize 8472
+    compressed 2
+Section 2
+    offset 5976
+    size 400
+    recsize 400
+    recunpacksize 400
+    compressed 0
+Section 3
+    offset 6376
+    size 40
+    recsize 40
+    recunpacksize 40
+    compressed 0
+Section 5
+    offset 6416
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 15904
+    recsize 11286
+    recunpacksize 15904
+    compressed 2
+Section 2
+    offset 11288
+    size 560
+    recsize 560
+    recunpacksize 560
+    compressed 0
+Section 3
+    offset 11848
+    size 328
+    recsize 328
+    recunpacksize 328
+    compressed 0
+Section 5
+    offset 12176
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 7544
+    recsize 5299
+    recunpacksize 7544
+    compressed 2
+Section 2
+    offset 5300
+    size 352
+    recsize 352
+    recunpacksize 352
+    compressed 0
+Section 3
+    offset 5652
+    size 40
+    recsize 40
+    recunpacksize 40
+    compressed 0
+Section 5
+    offset 5692
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 10320
+    recsize 6599
+    recunpacksize 10320
+    compressed 2
+Section 2
+    offset 6600
+    size 704
+    recsize 704
+    recunpacksize 704
+    compressed 0
+Section 3
+    offset 7304
+    size 32
+    recsize 32
+    recunpacksize 32
+    compressed 0
+Section 5
+    offset 7336
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 44168
+    recsize 27815
+    recunpacksize 44168
+    compressed 2
+Section 2
+    offset 27816
+    size 15096
+    recsize 4148
+    recunpacksize 15096
+    compressed 2
+Section 3
+    offset 31964
+    size 320
+    recsize 320
+    recunpacksize 320
+    compressed 0
+Section 5
+    offset 32284
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 218160
+    recsize 137686
+    recunpacksize 218160
+    compressed 2
+Section 2
+    offset 137688
+    size 56264
+    recsize 13862
+    recunpacksize 56264
+    compressed 2
+Section 3
+    offset 151552
+    size 7272
+    recsize 979
+    recunpacksize 7272
+    compressed 2
+Section 5
+    offset 152532
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 75728
+    recsize 46054
+    recunpacksize 75728
+    compressed 2
+Section 2
+    offset 46056
+    size 20456
+    recsize 5604
+    recunpacksize 20456
+    compressed 2
+Section 3
+    offset 51660
+    size 3200
+    recsize 299
+    recunpacksize 3200
+    compressed 2
+Section 5
+    offset 51960
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 3344
+    recsize 2278
+    recunpacksize 3344
+    compressed 2
+Section 2
+    offset 2280
+    size 136
+    recsize 136
+    recunpacksize 136
+    compressed 0
+Section 3
+    offset 2416
+    size 0
+    recsize 0
+    recunpacksize 0
+    compressed 0
+Section 5
+    offset 2416
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 8192
+    recsize 5043
+    recunpacksize 8192
+    compressed 2
+Section 2
+    offset 5044
+    size 1824
+    recsize 627
+    recunpacksize 1824
+    compressed 2
+Section 3
+    offset 5672
+    size 0
+    recsize 0
+    recunpacksize 0
+    compressed 0
+Section 5
+    offset 5672
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 390320
+    recsize 237620
+    recunpacksize 390320
+    compressed 2
+Section 2
+    offset 237620
+    size 171248
+    recsize 41895
+    recunpacksize 171248
+    compressed 2
+Section 3
+    offset 279516
+    size 136208
+    recsize 35241
+    recunpacksize 136208
+    compressed 2
+Section 5
+    offset 314760
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 20056
+    recsize 13399
+    recunpacksize 20056
+    compressed 2
+Section 2
+    offset 13400
+    size 3624
+    recsize 1267
+    recunpacksize 3624
+    compressed 2
+Section 3
+    offset 14668
+    size 2048
+    recsize 197
+    recunpacksize 2048
+    compressed 2
+Section 5
+    offset 14868
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 3108
+    recsize 2488
+    recunpacksize 3108
+    compressed 2
+Section 2
+    offset 2488
+    size 0
+    recsize 0
+    recunpacksize 0
+    compressed 0
+Section 3
+    offset 2488
+    size 52
+    recsize 52
+    recunpacksize 52
+    compressed 0
+Section 5
+    offset 2540
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 4388
+    recsize 3343
+    recunpacksize 4388
+    compressed 2
+Section 2
+    offset 3344
+    size 24
+    recsize 24
+    recunpacksize 24
+    compressed 0
+Section 3
+    offset 3368
+    size 52
+    recsize 52
+    recunpacksize 52
+    compressed 0
+Section 5
+    offset 3420
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 71632
+    recsize 47235
+    recunpacksize 71632
+    compressed 2
+Section 2
+    offset 47236
+    size 10592
+    recsize 3707
+    recunpacksize 10592
+    compressed 2
+Section 3
+    offset 50944
+    size 76
+    recsize 76
+    recunpacksize 76
+    compressed 0
+Section 5
+    offset 51020
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 18452
+    recsize 12456
+    recunpacksize 18452
+    compressed 2
+Section 2
+    offset 12456
+    size 252
+    recsize 252
+    recunpacksize 252
+    compressed 0
+Section 3
+    offset 12708
+    size 48
+    recsize 48
+    recunpacksize 48
+    compressed 0
+Section 5
+    offset 12756
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 11348
+    recsize 8717
+    recunpacksize 11348
+    compressed 2
+Section 2
+    offset 8720
+    size 3116
+    recsize 937
+    recunpacksize 3116
+    compressed 2
+Section 3
+    offset 9660
+    size 48
+    recsize 48
+    recunpacksize 48
+    compressed 0
+Section 5
+    offset 9708
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 52968
+    recsize 36401
+    recunpacksize 52968
+    compressed 2
+Section 2
+    offset 36404
+    size 6264
+    recsize 1821
+    recunpacksize 6264
+    compressed 2
+Section 3
+    offset 38228
+    size 2188
+    recsize 255
+    recunpacksize 2188
+    compressed 2
+Section 5
+    offset 38484
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 6876
+    recsize 4863
+    recunpacksize 6876
+    compressed 2
+Section 2
+    offset 4864
+    size 228
+    recsize 228
+    recunpacksize 228
+    compressed 0
+Section 3
+    offset 5092
+    size 28
+    recsize 28
+    recunpacksize 28
+    compressed 0
+Section 5
+    offset 5120
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 7984
+    recsize 5654
+    recunpacksize 7984
+    compressed 2
+Section 2
+    offset 5656
+    size 216
+    recsize 216
+    recunpacksize 216
+    compressed 0
+Section 3
+    offset 5872
+    size 28
+    recsize 28
+    recunpacksize 28
+    compressed 0
+Section 5
+    offset 5900
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 6520
+    recsize 4515
+    recunpacksize 6520
+    compressed 2
+Section 2
+    offset 4516
+    size 328
+    recsize 328
+    recunpacksize 328
+    compressed 0
+Section 3
+    offset 4844
+    size 28
+    recsize 28
+    recunpacksize 28
+    compressed 0
+Section 5
+    offset 4872
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 14464
+    recsize 9998
+    recunpacksize 14464
+    compressed 2
+Section 2
+    offset 10000
+    size 384
+    recsize 384
+    recunpacksize 384
+    compressed 0
+Section 3
+    offset 10384
+    size 28
+    recsize 28
+    recunpacksize 28
+    compressed 0
+Section 5
+    offset 10412
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 8848
+    recsize 6341
+    recunpacksize 8848
+    compressed 2
+Section 2
+    offset 6344
+    size 448
+    recsize 448
+    recunpacksize 448
+    compressed 0
+Section 3
+    offset 6792
+    size 28
+    recsize 28
+    recunpacksize 28
+    compressed 0
+Section 5
+    offset 6820
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+Section 1
+    offset 0
+    size 3976
+    recsize 2800
+    recunpacksize 3976
+    compressed 2
+Section 2
+    offset 2800
+    size 120
+    recsize 120
+    recunpacksize 120
+    compressed 0
+Section 3
+    offset 2920
+    size 0
+    recsize 0
+    recunpacksize 0
+    compressed 0
+Section 5
+    offset 2920
+    size 80
+    recsize 80
+    recunpacksize 80
+    compressed 0
+-------------------------------------------------------------
+make minfs image file [/Users/usrsse2/carplay/melis-utils/melis-utils-macOS/lol/LTTF133.img.dump/data_udisk.fex] succeeded
+image config size  : [ 6750208]
+image used   size  : [ 6512720]
+DEntry count       : [     170]
+DEntry length      : [   16148]
+FData  length      : [ 6495824]
+-------------------------------------------------------------
+Updating checksum of LTTF133.img.dump/data_udisk.fex in LTTF133.img.dump/Vdata_udisk.fex
+add_checksum(7153,0x7ff8529dc680) malloc: nano zone abandoned due to inability to preallocate reserved vm space.
+Updating checksum of LTTF133.img.dump/melis_pkg_nor.fex in LTTF133.img.dump/Vmelis_pkg_nor.fex
+add_checksum(7154,0x7ff8529dc680) malloc: nano zone abandoned due to inability to preallocate reserved vm space.
+Packing LTTF133.img.dump into update image LTTF133.img
+awimage(7155,0x7ff8529dc680) malloc: nano zone abandoned due to inability to preallocate reserved vm space.
+/Users/usrsse2/carplay/melis-utils/melis-utils-macOS/bin/awimage: packing LTTF133.img.dump into LTTF133.img
+
+```
+
