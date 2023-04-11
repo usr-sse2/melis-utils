@@ -1,5 +1,7 @@
 # melis-utils
 
+![Build status](https://github.com/usr-sse2/melis-utils/actions/workflows/makefile.yml/badge.svg?branch=master)
+
 Usage example:
 ```
  ~/carplay/melis-utils/melis-utils-macOS/lol   master ●  ~/carplay/melis-utils/melis-utils-macOS/unpack-update.sh LTTF133.img 
