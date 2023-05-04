@@ -1,6 +1,6 @@
 [submodule "awutils"]
 	path = awutils
-	url = git@github.com:usr-sse2/awutils.git
+	url = https://github.com/usr-sse2/awutils.git
 [submodule "lindenis-v833-RTOS-melis-4.0.git"]
 	path = lindenis-v833-RTOS-melis-4.0
-	url = git@github.com:usr-sse2/lindenis-v833-RTOS-melis-4.0.git
+	url = https://github.com/usr-sse2/lindenis-v833-RTOS-melis-4.0.git
