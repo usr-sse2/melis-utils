@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <AssemblyName>localidiff</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <SelfContained>true</SelfContained>
+    <LangVersion>latest</LangVersion>
+    <PublishTrimmed>true</PublishTrimmed>
+    <PublishAot>true</PublishAot>
+    <PublishSingleFile>false</PublishSingleFile>
+</PropertyGroup>
+
+</Project>
