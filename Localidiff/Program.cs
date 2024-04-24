@@ -94,10 +94,10 @@ else if (args.Length == 2 && args[0] == "apply")
         break;
 
       case "CHANGE":
-        if (dict!.ContainsKey(items[1]))
+        if (dict!.TryGetValue(items[1], out string[]? values))
         {
-          Console.WriteLine($"Replacing {dict![items[1]][int.Parse(items[2])]} with {items[4]}");
-          dict![items[1]][int.Parse(items[2])] = items[4];
+          Console.WriteLine($"Replacing {values[int.Parse(items[2])]} with {items[4]}");
+          values[int.Parse(items[2])] = items[4];
         }
         else
           Console.WriteLine($"{items[1]} ({items[3]} -> {items[4]}) not found for replace!");
@@ -109,6 +109,19 @@ else if (args.Length == 2 && args[0] == "apply")
   }
   Console.WriteLine($"Writing {path}");
   File.WriteAllLines(path!, dict!.OrderByDescending(pair => pair.Key == "//").ThenBy(pair => pair.Key).Select(pair => FormatLine(pair.Value) + "\r"), UTF16LE);
+}
+else if (args.Length == 4 && args[0] == "copy-missing-strings")
+{
+    var dict = LoadFromFile(args[1]);
+    var to = int.Parse(args[2]) + 2; // opening brace and key
+    var from = int.Parse(args[3]) + 2;
+    foreach (var (key, values) in dict)
+        if (string.IsNullOrWhiteSpace(values[to]))
+        {
+            Console.WriteLine($"Replacing {values[to]} with {values[from]}");
+            values[to] = values[from];
+        }
+    File.WriteAllLines(args[1]!, dict!.OrderByDescending(pair => pair.Key == "//").ThenBy(pair => pair.Key).Select(pair => FormatLine(pair.Value) + "\r"), UTF16LE);
 }
 else if (args.Length == 2)
 {
@@ -127,5 +140,8 @@ else
     
     Localidiff apply patch.patch
       Applies patch.patch
+
+    Localidiff copy-missing-strings file.txt destination-language source-language
+        Copies missing translations from source-language to destination-language in file.txt. Languages are specified as column numbers.
   """);
 }
