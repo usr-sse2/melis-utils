@@ -1,7 +1,10 @@
-﻿static Dictionary<string, string[]> LoadFromFile(string path)
+﻿using System.Text;
+Encoding UTF16LE = new UnicodeEncoding(bigEndian: false, byteOrderMark: true, throwOnInvalidBytes: true);
+
+Dictionary<string, string[]> LoadFromFile(string path)
 {
   var dict = new Dictionary<string, string[]>();
-  foreach (var strings in File.ReadAllLines(path).Select(line => line.Split('\t')))
+  foreach (var strings in File.ReadAllLines(path, UTF16LE).Select(line => line.Split('\t')))
   {
     switch (strings[0])
     {
@@ -11,7 +14,7 @@
       case "{":
         dict[strings[1]] = strings;
         break;
-      case var _ when (strings.All(string.IsNullOrWhiteSpace)):
+      case var _ when strings.All(string.IsNullOrWhiteSpace):
         break;
       default:
         throw new NotImplementedException(strings[0]);
@@ -22,7 +25,7 @@
 
 static string FormatLine(string[] values) => string.Join('\t', values);
 
-static void Compare(string oldPath, string newPath)
+void Compare(string oldPath, string newPath)
 {
   var oldDict = LoadFromFile(oldPath);
   var newDict = LoadFromFile(newPath);
@@ -51,7 +54,6 @@ static void Compare(string oldPath, string newPath)
   }
 }
 
-
 if (args.Length == 7)
 {
   // localidiff old.txt new.txt
@@ -61,7 +63,7 @@ if (args.Length == 7)
 else if (args.Length == 2 && args[0] == "apply")
 {
   // localidiff apply patch
-  var patch = File.ReadAllLines(args[1]);
+  var patch = File.ReadAllLines(args[1], UTF16LE);
 
   Dictionary<string, string[]>? dict = null;
   string? path = null;
@@ -74,7 +76,7 @@ else if (args.Length == 2 && args[0] == "apply")
         if (dict != null && path != null)
         {
           Console.WriteLine($"Writing {path}");
-          File.WriteAllLines(path, dict.OrderByDescending(pair => pair.Key == "//").ThenBy(pair => pair.Key).Select(pair => FormatLine(pair.Value) + "\r"), System.Text.Encoding.Unicode);
+          File.WriteAllLines(path, dict.OrderByDescending(pair => pair.Key == "//").ThenBy(pair => pair.Key).Select(pair => FormatLine(pair.Value) + "\r"), UTF16LE);
         }
         path = items[1];
         Console.WriteLine($"Loading {path}");
@@ -106,7 +108,7 @@ else if (args.Length == 2 && args[0] == "apply")
     }
   }
   Console.WriteLine($"Writing {path}");
-  File.WriteAllLines(path!, dict!.OrderByDescending(pair => pair.Key == "//").ThenBy(pair => pair.Key).Select(pair => FormatLine(pair.Value) + "\r"), System.Text.Encoding.Unicode);
+  File.WriteAllLines(path!, dict!.OrderByDescending(pair => pair.Key == "//").ThenBy(pair => pair.Key).Select(pair => FormatLine(pair.Value) + "\r"), UTF16LE);
 }
 else if (args.Length == 2)
 {
