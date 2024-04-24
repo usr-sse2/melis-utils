@@ -60,6 +60,10 @@ if (args.Length == 7)
   Console.WriteLine($"FILE\t{args[0]}");
   Compare(args[1], args[4]);
 }
+else if (args.Length == 2 && args[0] == "fix-bom")
+{
+  File.WriteAllText(args[1], File.ReadAllText(args[1], UTF16LE), UTF16LE);
+}
 else if (args.Length == 2 && args[0] == "apply")
 {
   // localidiff apply patch
