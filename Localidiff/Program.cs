@@ -127,6 +127,10 @@ else if (args.Length == 4 && args[0] == "copy-missing-strings")
         }
     File.WriteAllLines(args[1]!, dict!.OrderByDescending(pair => pair.Key == "//").ThenBy(pair => pair.Key).Select(pair => FormatLine(pair.Value) + "\r"), UTF16LE);
 }
+else if (args.Length == 2 && args[0] == "replace-unsupported-characters")
+{
+  File.WriteAllText(args[1], File.ReadAllText(args[1], UTF16LE).Replace('і', 'i'), UTF16LE);
+}
 else if (args.Length == 2)
 {
   Console.WriteLine($"FILE\t{Path.GetFileName(args[0])}");
@@ -136,16 +140,22 @@ else
 {
   Console.WriteLine("""
   Usage:
-    Localidiff 1.txt 2.txt
+    localidiff 1.txt 2.txt
       Compares 2.txt to 1.txt and outputs the patch into the standard output
 
-    Localidiff unused 1.txt unused unused 2.txt unused unused
+    localidiff unused 1.txt unused unused 2.txt unused unused
       The same but for usage as a git difftool
     
-    Localidiff apply patch.patch
+    localidiff apply patch.patch
       Applies patch.patch
 
-    Localidiff copy-missing-strings file.txt destination-language source-language
-        Copies missing translations from source-language to destination-language in file.txt. Languages are specified as column numbers.
+    localidiff copy-missing-strings file.txt destination-language source-language
+      Copies missing translations from source-language to destination-language in file.txt. Languages are specified as column numbers, where the first language (English) is 0.
+
+    localidiff replace-unsupported-characters
+      Replaces known characters missing in the font with their graphic analogs.
+
+    localidiff fix-bom
+      Adds byte-order mark to UTF-16LE file.
   """);
 }

@@ -18,6 +18,18 @@ fi
 UPDATE_FILE=$1
 rm -f "$UPDATE_FILE"
 
+rm -Rf "$UPDATE_FILE.dump/Language.bak"
+cp -R "$UPDATE_FILE.dump/data_udisk/apps/Language" "$UPDATE_FILE.dump/Language.bak"
+for file in "$UPDATE_FILE.dump/data_udisk/apps/Language"/*.txt
+do
+  localidiff replace-unsupported-characters "$file"
+  localidiff copy-missing-strings "$file" 21 9
+  for language in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21
+  do
+    localidiff copy-missing-strings "$file" $language 0
+  done
+done
+
 export ASAN_OPTIONS=detect_leaks=0
 
 echo "Packing $UPDATE_FILE.dump/data_udisk into MINFS image $UPDATE_FILE.dump/data_udisk.fex"
@@ -31,3 +43,6 @@ echo "Updating checksum of $UPDATE_FILE.dump/melis_pkg_nor.fex in $UPDATE_FILE.d
 
 echo "Packing $UPDATE_FILE.dump into update image $UPDATE_FILE"
 "$SCRIPT_DIR"/bin/awimage -v -n "$UPDATE_FILE.dump"
+
+rm -Rf "$UPDATE_FILE.dump/data_udisk/apps/Language"
+mv "$UPDATE_FILE.dump/Language.bak" "$UPDATE_FILE.dump/data_udisk/apps/Language"
